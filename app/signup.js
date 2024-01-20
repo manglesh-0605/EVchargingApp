@@ -1,22 +1,26 @@
 import React, { useState } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, Image } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { router } from 'expo-router'
 import InputField from '../src/components/InputField';
 import { AntDesign } from '@expo/vector-icons';
 import ThemeConstant from '../src/constants/ThemeConstant';
 import CustomButton from '../src/components/CustomButton';
 import BackButton from '../src/components/BackButton';
+import GoogleLogo from '../assets/social/google.png'
+import FbLogo from '../assets/social/facebook.png'
+import AppleLogo from '../assets/social/apple.png'
 
 
 const SignUp = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [phonenumber, setphonenumber] = useState('');
+    const [email, setemail] = useState('');
 
     const handleLogin = () => {
         // Implement your login logic here
-        console.log('Login button pressed');
-        console.log('Username:', username);
-        console.log('Password:', password);
+        router.back();
     };
 
     const handleSignUp = () => {
@@ -47,8 +51,8 @@ const SignUp = () => {
             }}>
                 <InputField
                     placeholder="E-mail"
-                    value={username}
-                    onChangeText={(text) => setUsername(text)}
+                    value={email}
+                    onChangeText={(text) => setemail(text)}
                 />
             </View>
             <View style={{
@@ -56,20 +60,38 @@ const SignUp = () => {
             }}>
                 <InputField
                     placeholder="Phone number"
-                    value={username}
-                    onChangeText={(text) => setUsername(text)}
+                    value={phonenumber}
+                    onChangeText={(text) => setphonenumber(text)}
                 />
             </View>
 
-            <InputField
+            <View style={{
+                marginBottom: 52
+            }}>
+                <InputField
                 placeholder="Password"
                 value={password}
                 onChangeText={(text) => setPassword(text)}
                 secureTextEntry
             />
+            </View>
 
-            <CustomButton title="Login" onPress={handleLogin} />
+
+            <CustomButton title="Sign up" onPress={handleSignUp} />
             <Text style={styles.or}>or continue with</Text>
+
+            <View style={styles.pngHolderMain}>
+                <TouchableOpacity style={styles.pngButton}>
+                    <Image style={styles.png} source={GoogleLogo} />
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.pngButton}>
+                    <Image style={styles.png} source={AppleLogo} />
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.pngButton}>
+                    <Image style={styles.png} source={FbLogo} />
+                </TouchableOpacity>
+
+            </View>
 
 
             <View style={{
@@ -84,7 +106,10 @@ const SignUp = () => {
                     <Text>Already member? </Text>
                 </View>
 
-                <TouchableOpacity style={{
+                <TouchableOpacity
+                    onPress={handleLogin}
+
+                    style={{
                     margin: 0,
                     padding: 0,
                     paddingVertical: 5,
@@ -104,6 +129,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         paddingHorizontal: ThemeConstant.PADDING_MAIN,
+        backgroundColor: '#fff'
     },
     backButton: {
         marginBottom: 52
@@ -126,14 +152,30 @@ const styles = StyleSheet.create({
     or: {
         color: ThemeConstant.FADED_BLACK,
         textAlign: 'center',
-        margin: 8
+        margin: 12
     },
     signup: {
         fontWeight: 'bold',
     },
-    signupbox: {
-
+    pngHolderMain: {
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+        height: 50,
+        marginBottom: 52
+    },
+    pngButton: {
+        height: 60,
+        width: 90,
+        backgroundColor: '#F0F5F2',
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: 100
+    },
+    png: {
+        width: 30,
+        height: 30
     }
+
 });
 
 export default SignUp;
