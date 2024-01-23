@@ -15,6 +15,7 @@ const LoginScreen = () => {
 
     const handleLogin = () => {
         // Implement your login logic here
+        router.push('/otp');
         console.log('Login button pressed');
         console.log('Username:', username);
         console.log('Password:', password);
