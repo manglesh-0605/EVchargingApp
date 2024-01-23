@@ -10,7 +10,7 @@ const BackButton = ({ marginBottom = 0 }) => {
     }
 
     return (
-        <TouchableOpacity onPress={handleBack} style={{ marginBottom: marginBottom }}>
+        <TouchableOpacity onPress={handleBack} style={{ marginBottom: marginBottom, marginTop: 10 }}>
             <AntDesign name="arrowleft" size={24} color="black" />
         </TouchableOpacity>
     )

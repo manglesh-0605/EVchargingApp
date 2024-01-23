@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, Image } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, Image, ScrollView } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { router } from 'expo-router'
 import InputField from '../src/components/InputField';
@@ -10,6 +10,7 @@ import BackButton from '../src/components/BackButton';
 import GoogleLogo from '../assets/social/google.png'
 import FbLogo from '../assets/social/facebook.png'
 import AppleLogo from '../assets/social/apple.png'
+
 
 
 const SignUp = () => {
@@ -32,95 +33,99 @@ const SignUp = () => {
 
     return (
         <SafeAreaView style={styles.container}>
+            <ScrollView showsVerticalScrollIndicator={false}>
+                <BackButton marginBottom={52} />
 
-            <BackButton marginBottom={52} />
-
-            <Text style={styles.title}>Create account</Text>
-            <Text style={styles.subtitle}>Sign up to get started!</Text>
-            <View style={{
-                marginBottom: 20
-            }}>
-                <InputField
-                    placeholder="Username"
-                    value={username}
-                    onChangeText={(text) => setUsername(text)}
-                />
-            </View>
-            <View style={{
-                marginBottom: 20
-            }}>
-                <InputField
-                    placeholder="E-mail"
-                    value={email}
-                    onChangeText={(text) => setemail(text)}
-                />
-            </View>
-            <View style={{
-                marginBottom: 20
-            }}>
-                <InputField
-                    placeholder="Phone number"
-                    value={phonenumber}
-                    onChangeText={(text) => setphonenumber(text)}
-                />
-            </View>
-
-            <View style={{
-                marginBottom: 52
-            }}>
-                <InputField
-                placeholder="Password"
-                value={password}
-                onChangeText={(text) => setPassword(text)}
-                secureTextEntry
-            />
-            </View>
-
-
-            <CustomButton title="Sign up" onPress={handleSignUp} />
-            <Text style={styles.or}>or continue with</Text>
-
-            <View style={styles.pngHolderMain}>
-                <TouchableOpacity style={styles.pngButton}>
-                    <Image style={styles.png} source={GoogleLogo} />
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.pngButton}>
-                    <Image style={styles.png} source={AppleLogo} />
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.pngButton}>
-                    <Image style={styles.png} source={FbLogo} />
-                </TouchableOpacity>
-
-            </View>
-
-
-            <View style={{
-                flexDirection: 'row',
-                justifyContent: 'center'
-            }}>
+                <Text style={styles.title}>Create account</Text>
+                <Text style={styles.subtitle}>Sign up to get started!</Text>
                 <View style={{
-                    margin: 0,
-                    padding: 0,
-                    padding: 5
+                    marginBottom: 20
                 }}>
-                    <Text>Already member? </Text>
+                    <InputField
+                        placeholder="Username"
+                        value={username}
+                        iconname={'user'}
+                        onChangeText={(text) => setUsername(text)}
+                    />
+                </View>
+                <View style={{
+                    marginBottom: 20
+                }}>
+                    <InputField
+                        placeholder="E-mail"
+                        value={email}
+                        iconname={'mail'}
+                        onChangeText={(text) => setemail(text)}
+                    />
+                </View>
+                <View style={{
+                    marginBottom: 20
+                }}>
+                    <InputField
+                        placeholder="Phone number"
+                        iconname={'phone'}
+                        value={phonenumber}
+                        onChangeText={(text) => setphonenumber(text)}
+                    />
                 </View>
 
-                <TouchableOpacity
-                    onPress={handleLogin}
-
-                    style={{
-                    margin: 0,
-                    padding: 0,
-                    paddingVertical: 5,
-                    borderBottomWidth: 2,
-                    borderBottomColor: ThemeConstant.PRIMARY_COLOR
+                <View style={{
+                    marginBottom: 52
                 }}>
-                    <Text style={styles.signup}>Log in</Text>
-                </TouchableOpacity>
+                    <InputField
+                        placeholder="Password"
+                        iconname={'lock'}
+                        value={password}
+                        onChangeText={(text) => setPassword(text)}
+                        secureTextEntry
+                    />
+                </View>
 
-            </View>
 
+                <CustomButton title="Sign up" onPress={handleSignUp} />
+                <Text style={styles.or}>or continue with</Text>
+
+                <View style={styles.pngHolderMain}>
+                    <TouchableOpacity style={styles.pngButton}>
+                        <Image style={styles.png} source={GoogleLogo} />
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.pngButton}>
+                        <Image style={styles.png} source={AppleLogo} />
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.pngButton}>
+                        <Image style={styles.png} source={FbLogo} />
+                    </TouchableOpacity>
+
+                </View>
+
+
+                <View style={{
+                    flexDirection: 'row',
+                    justifyContent: 'center'
+                }}>
+                    <View style={{
+                        margin: 0,
+                        padding: 0,
+                        padding: 5
+                    }}>
+                        <Text>Already member? </Text>
+                    </View>
+
+                    <TouchableOpacity
+                        onPress={handleLogin}
+
+                        style={{
+                            margin: 0,
+                            padding: 0,
+                            paddingVertical: 5,
+                            borderBottomWidth: 2,
+                            borderBottomColor: ThemeConstant.PRIMARY_COLOR
+                        }}>
+                        <Text style={styles.signup}>Log in</Text>
+                    </TouchableOpacity>
+
+                </View>
+            </ScrollView>
         </SafeAreaView >
     );
 };

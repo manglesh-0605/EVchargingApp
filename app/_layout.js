@@ -4,12 +4,14 @@ import { Stack } from 'expo-router'
 
 const RootLayout = () => {
     return (
-        <Stack initialRouteName='login' screenOptions={{
+        <Stack screenOptions={{
             headerShown: false
         }}>
             <Stack.Screen name='index' />
             <Stack.Screen name='login' />
             <Stack.Screen name='signup' />
+            <Stack.Screen name='forgotpassword' />
+
             <Stack.Screen name='(tabs)' options={{
                 headerShown: false
             }} />

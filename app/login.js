@@ -57,18 +57,20 @@ const LoginScreen = () => {
                 onChangeText={(text) => setPassword(text)}
                 secureTextEntry
             />
-            <Text style={styles.forgotpasswordText}>Forgot Password?</Text>
+            <Text onPress={() => router.push('./forgotpassword')} style={styles.forgotpasswordText}>Forgot Password?</Text>
             <CustomButton title="Login" onPress={handleLogin} />
             <Text style={styles.or}>or</Text>
             <View style={{
-                marginBottom: 190
+                marginBottom: 0
             }}>
                 <CustomButton type='outline' title="Login with Phone no." onPress={handleLoginWithPhone} />
             </View>
+            <View style={{ flex: 1 }} />
 
             <View style={{
                 flexDirection: 'row',
-                justifyContent: 'center'
+                justifyContent: 'center',
+                marginBottom: 20
             }}>
                 <View style={{
                     margin: 0,
