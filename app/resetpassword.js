@@ -9,16 +9,17 @@ import CustomButton from '../src/components/CustomButton';
 import BackButton from '../src/components/BackButton';
 
 
-const ForgotPassword = () => {
-    const [phone, setPhone] = useState('');
-    const [password, setPassword] = useState('');
+const ResetPassword = () => {
+    const [password, setPasseord] = useState('');
+    const [confirmPassword, setConrimPassword] = useState('');
 
     const handleLogin = () => {
         // Implement your login logic here
-        console.log('Send OTP button pressed');
-        router.push('./resetpassword');
 
     };
+
+
+
 
 
 
@@ -27,25 +28,35 @@ const ForgotPassword = () => {
 
             <BackButton marginBottom={52} />
 
-            <Text style={styles.title}>Forgot Password?</Text>
-            <Text style={styles.subtitle}>Please enter your registered phone number. We will send an OTP to reset your password.</Text>
+            <Text style={styles.title}>Reset Password</Text>
+            <Text style={styles.subtitle}>Please enter the 6 digit otp.</Text>
             <View style={{
-                marginBottom: 52
+                marginBottom: 20
             }}>
                 <InputField
-                    placeholder="Phone"
-                    value={phone}
-                    iconname={'phone'}
-                    onChangeText={(text) => setPhone(text)}
+                    placeholder="New Password"
+                    value={password}
+                    iconname={'lock'}
+                    onChangeText={(text) => setPasseord(text)}
+                    secureTextEntry
                 />
             </View>
 
-            <CustomButton title="Send OTP" onPress={handleLogin} />
-            <Text style={styles.forgotpasswordText}>Resend OTP</Text>
+            <View style={{
+                marginBottom: 40
+            }}>
 
-         
+                <InputField
+                    placeholder="Confirm New Password"
+                    value={confirmPassword}
+                    iconname={'lock'}
+                    onChangeText={(text) => setConrimPassword(text)}
+                    secureTextEntry
+                />
+            </View>
+            <CustomButton title="Set Password" onPress={handleLogin} />
 
-       
+
 
         </SafeAreaView >
     );
@@ -85,4 +96,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default ForgotPassword;
+export default ResetPassword;

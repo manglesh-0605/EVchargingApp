@@ -24,14 +24,6 @@ const OtpScreen = () => {
         console.log('Login button pressed');
     };
 
-    const handleLoginWithPhone = () => {
-        // Implement your sign-up logic here
-        console.log('Sign Up button pressed');
-    };
-
-    const handleSignup = () => {
-        router.push('/signup')
-    }
 
 
 
