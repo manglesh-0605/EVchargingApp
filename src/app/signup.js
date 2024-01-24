@@ -2,14 +2,14 @@ import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Image, ScrollView } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { router } from 'expo-router'
-import InputField from '../src/components/InputField';
+import InputField from '../components/InputField';
 import { AntDesign } from '@expo/vector-icons';
-import ThemeConstant from '../src/constants/ThemeConstant';
-import CustomButton from '../src/components/CustomButton';
-import BackButton from '../src/components/BackButton';
-import GoogleLogo from '../assets/social/google.png'
-import FbLogo from '../assets/social/facebook.png'
-import AppleLogo from '../assets/social/apple.png'
+import ThemeConstant from '../constants/ThemeConstant';
+import CustomButton from '../components/CustomButton';
+import BackButton from '../components/BackButton';
+import GoogleLogo from '../../assets/social/google.png'
+import FbLogo from '../../assets/social/facebook.png'
+import AppleLogo from '../../assets/social/apple.png'
 
 
 

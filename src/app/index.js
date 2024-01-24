@@ -3,11 +3,11 @@ import React, { useEffect } from 'react'
 import { router } from 'expo-router'
 import { SafeAreaView } from 'react-native-safe-area-context'
 
-const index = () => {
+const Page = () => {
 
     useEffect(() => {
         setTimeout(() => {
-            router.replace('/login')
+            router.replace('/onboarding/onboarding1')
         }, 0)
     }, [])
     return (
@@ -16,6 +16,6 @@ const index = () => {
     )
 }
 
-export default index
+export default Page
 
 const styles = StyleSheet.create({})

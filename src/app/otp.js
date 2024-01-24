@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { router } from 'expo-router'
-import InputField from '../src/components/InputField';
+import InputField from '../components/InputField';
 import { AntDesign } from '@expo/vector-icons';
-import ThemeConstant from '../src/constants/ThemeConstant';
-import CustomButton from '../src/components/CustomButton';
-import BackButton from '../src/components/BackButton';
+import ThemeConstant from '../constants/ThemeConstant';
+import CustomButton from '../components/CustomButton';
+import BackButton from '../components/BackButton';
 import { moderateScale } from 'react-native-size-matters';
 
 

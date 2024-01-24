@@ -4,10 +4,10 @@ import { View, Text, TouchableOpacity, StyleSheet, Modal, Pressable } from 'reac
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { router } from 'expo-router'
 import { AntDesign } from '@expo/vector-icons';
-import InputField from '../src/components/InputField';
-import ThemeConstant from '../src/constants/ThemeConstant';
-import CustomButton from '../src/components/CustomButton';
-import BackButton from '../src/components/BackButton';
+import InputField from '../components/InputField';
+import ThemeConstant from '../constants/ThemeConstant';
+import CustomButton from '../components/CustomButton';
+import BackButton from '../components/BackButton';
 import { moderateScale, moderateVerticalScale } from 'react-native-size-matters';
 import { StatusBar } from 'expo-status-bar';
 
