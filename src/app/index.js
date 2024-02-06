@@ -7,7 +7,7 @@ const Page = () => {
 
     useEffect(() => {
         setTimeout(() => {
-            router.replace('/onboarding/onboarding1')
+            router.replace('/(tabs)')
         }, 0)
     }, [])
     return (

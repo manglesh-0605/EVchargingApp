@@ -22,6 +22,7 @@ const OtpScreen = () => {
     const handleLogin = () => {
         // Implement your login logic here
         console.log('Login button pressed');
+        router.replace('/(tabs)')
     };
 
 
