@@ -68,7 +68,7 @@ const Profile = () => {
                 </View>
             </View>
 
-            <ScrollView>
+            <ScrollView showsVerticalScrollIndicator={false}>
                 <View style={{
                     paddingHorizontal: ThemeConstant.PADDING_MAIN,
                     gap: scale(14),
