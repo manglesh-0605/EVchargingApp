@@ -1,4 +1,4 @@
-import { Image, ScrollView, StyleSheet, Text, View, Switch } from 'react-native'
+import { Image, ScrollView, StyleSheet, Text, View, Switch, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { SimpleLineIcons } from '@expo/vector-icons';
@@ -9,6 +9,7 @@ import Line from '../../components/profile/line';
 import { MaterialIcons } from '@expo/vector-icons';
 import { useSelector, useDispatch } from 'react-redux';
 import { SET_THEME } from '../../store/allactionsTypes';
+import { router } from 'expo-router';
 
 
 const Profile = () => {
@@ -97,9 +98,9 @@ const Profile = () => {
 
                         <View>
                             <Switch
-                                trackColor={{ false: '#c3c3c3', true: '#000' }}
-                                thumbColor={true ? '#fff' : '#000'}
-                                ios_backgroundColor="#3e3e3e"
+                                trackColor={{ false: 'red', true: '#3e3e3e' }}
+                                thumbColor={'#fff'}
+                                ios_backgroundColor="#fff"
                                 onValueChange={() => { dispatch({ type: SET_THEME, payload: isDark ? false : true }) }}
                                 value={isDark}
                             />
@@ -119,9 +120,9 @@ const Profile = () => {
                             Logout
                         </Text>
 
-                        <View>
+                        <TouchableOpacity onPress={() => { router.replace('/login') }}>
                             <MaterialIcons name="logout" size={24} color="#ff0000" />
-                        </View>
+                        </TouchableOpacity>
                     </View>
                 </View>
 
