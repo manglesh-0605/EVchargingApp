@@ -3,6 +3,7 @@ import React from 'react'
 import { Tabs } from 'expo-router'
 import { AntDesign } from '@expo/vector-icons';
 import { Feather } from '@expo/vector-icons';
+import { FontAwesome } from '@expo/vector-icons';
 import { moderateScale, scale } from 'react-native-size-matters';
 import ThemeConstant from '../../constants/ThemeConstant';
 
@@ -60,7 +61,7 @@ const TabsLayout = () => {
                             justifyContent: 'center',
                             alignItems: 'center'
                         }}>
-                            <Feather name="bookmark" size={24} color={focused ? ThemeConstant.PRIMARY_COLOR : '#000'} />
+                            <FontAwesome name={focused ? "bookmark" : "bookmark-o"} size={24} color={focused ? ThemeConstant.PRIMARY_COLOR : '#000'} />
                         </View>
                     )
                 }

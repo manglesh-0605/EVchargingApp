@@ -16,7 +16,7 @@ const Profile = () => {
     const dispatch = useDispatch();
     const { isDark } = useSelector((state) => state.themeReducer);
     return (
-        <SafeAreaView style={styles.container}>
+        <SafeAreaView edges={['top']} style={styles.container}>
             <View style={{
                 backgroundColor: '#F5F5F5',
                 paddingHorizontal: ThemeConstant.PADDING_MAIN,
