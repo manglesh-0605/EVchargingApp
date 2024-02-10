@@ -1,11 +1,12 @@
-import { StyleSheet, Text, View, Image } from 'react-native'
-import React from 'react'
+import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native'
+import React, { useState } from 'react'
 import { FontAwesome } from '@expo/vector-icons';
 import { moderateScale, moderateVerticalScale, scale } from 'react-native-size-matters';
 import ThemeConstant from '../../constants/ThemeConstant';
 
 const Itemcard = ({ item }) => {
 
+    const [bookmarked, setBookmarked] = useState(false)
     // icon name bookmark-o for open
 
     return (
@@ -20,9 +21,9 @@ const Itemcard = ({ item }) => {
                 <Text style={{ fontWeight: '400', fontSize: scale(8), color: '#000', opacity: .5 }}>2016 • 1000 km</Text>
             </View>
 
-            <View style={styles.iconContainer}>
-                <FontAwesome name="bookmark" size={24} color={ThemeConstant.PRIMARY_COLOR} />
-            </View>
+            <TouchableOpacity activeOpacity={0.7} style={styles.iconContainer} onPress={() => setBookmarked(!bookmarked)}>
+                <FontAwesome name={bookmarked ? "bookmark" : "bookmark-o"} size={24} color={ThemeConstant.PRIMARY_COLOR} />
+            </TouchableOpacity>
         </View>
     )
 }
