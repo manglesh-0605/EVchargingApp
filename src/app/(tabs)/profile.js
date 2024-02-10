@@ -72,7 +72,7 @@ const Profile = () => {
             <ScrollView showsVerticalScrollIndicator={false}>
                 <View style={{
                     paddingHorizontal: ThemeConstant.PADDING_MAIN,
-                    gap: scale(14),
+                    gap: scale(17),
                     marginTop: moderateScale(30)
                 }}>
                     <Profileitem name={'Personal Info'} />
@@ -136,7 +136,8 @@ export default Profile;
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#fff'
+        backgroundColor: '#fff',
+        paddingBottom: 24
     },
     title: {
         fontWeight: '700',

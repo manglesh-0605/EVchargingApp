@@ -34,7 +34,7 @@ const TabsLayout = () => {
                     )
                 }
             }} />
-            <Tabs.Screen name='classifieds' options={{
+            <Tabs.Screen name='(classifieds)' options={{
                 tabBarIcon: ({ focused }) => {
                     return (
                         <View style={{
