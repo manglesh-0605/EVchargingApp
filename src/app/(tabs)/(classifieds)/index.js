@@ -97,7 +97,7 @@ const styles = StyleSheet.create({
         // backgroundColor: 'red',
         paddingHorizontal: ThemeConstant.PADDING_MAIN,
         gap: scale(20),
-        paddingBottom: moderateVerticalScale(10),
+        paddingBottom: moderateVerticalScale(40),
         position: 'relative'
     },
     title: {

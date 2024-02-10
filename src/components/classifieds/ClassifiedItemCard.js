@@ -1,13 +1,14 @@
-import { StyleSheet, Text, View, Image } from 'react-native'
+import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { FontAwesome } from '@expo/vector-icons';
 import { moderateScale, moderateVerticalScale, scale } from 'react-native-size-matters';
 import ThemeConstant from '../../constants/ThemeConstant';
+import { router } from 'expo-router';
 
 const ClassifiedItemCard = ({ item }) => {
 
     return (
-        <View style={styles.cardContainer}>
+        <TouchableOpacity activeOpacity={0.8} style={styles.cardContainer} onPress={() => router.push('(classifieds)/classifiedsDetail')}>
             <Image style={styles.img} source={{ uri: 'https://images.unsplash.com/photo-1601362840469-51e4d8d58785?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8Ym13JTIwY2FyfGVufDB8fDB8fHww' }} />
 
             <View style={styles.detailContainer}>
@@ -15,7 +16,7 @@ const ClassifiedItemCard = ({ item }) => {
                 <Text style={{ fontWeight: '700', fontSize: scale(14), color: '#000' }}>BMW • X1</Text>
                 <Text style={{ fontWeight: '400', fontSize: scale(8), color: '#000', opacity: .5 }}>2016 • 1000 km</Text>
             </View>
-        </View>
+        </TouchableOpacity>
     )
 }
 
