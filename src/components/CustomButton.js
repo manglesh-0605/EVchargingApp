@@ -1,10 +1,11 @@
 import React from 'react';
 import { TouchableOpacity, Text, StyleSheet } from 'react-native';
 import ThemeConstant from '../constants/ThemeConstant';
+import { moderateVerticalScale } from 'react-native-size-matters';
 
 const CustomButton = ({ title, onPress, type = 'filled' }) => {
     return (
-        <TouchableOpacity style={{
+        <TouchableOpacity activeOpacity={0.9} style={{
             ...styles.button,
             backgroundColor: type == 'filled' ? ThemeConstant.PRIMARY_COLOR : '#fff',
             borderWidth: type == 'filled' ? 0 : 1,
@@ -26,6 +27,8 @@ const styles = StyleSheet.create({
         borderRadius: 100,
         width: '100%',
         alignItems: 'center',
+        height: moderateVerticalScale(50),
+        justifyContent: 'center'
     },
     buttonText: {
         fontSize: 16,
