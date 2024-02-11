@@ -141,8 +141,8 @@ const styles = StyleSheet.create({
     },
     title: {
         fontWeight: '700',
-        fontSize: 24,
-        marginVertical: 30,
+        fontSize: scale(20),
+        marginVertical: moderateVerticalScale(30),
     },
     name: {
         fontWeight: '700',

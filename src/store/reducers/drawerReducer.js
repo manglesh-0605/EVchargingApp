@@ -2,7 +2,7 @@ import { SET_DRAWER } from "../allactionsTypes";
 
 
 const initialState = {
-    drawerOpened: true
+    drawerOpened: false
 }
 export default function DrawerReducer(state = initialState, action) {
     const { type, payload } = action;

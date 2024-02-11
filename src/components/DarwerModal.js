@@ -9,10 +9,15 @@ import { Entypo } from '@expo/vector-icons';
 import ThemeConstant from '../constants/ThemeConstant';
 import DrawerMenuItem from './DrawerMenuItem';
 import Line from './profile/line';
+import { router } from 'expo-router';
 
 const DrawerModal = () => {
     const dispatch = useDispatch();
     const { drawerOpened } = useSelector(state => state.DrawerReducer)
+
+    const navigateToContactUs = () => {
+        router.push('/contact_us')
+    }
     return (
         <Modal
             animationType="fade"
@@ -48,7 +53,7 @@ const DrawerModal = () => {
                         <Line />
                         <DrawerMenuItem name={'Advertise with us'} />
                         <Line />
-                        <DrawerMenuItem name={'Contact us'} />
+                        <DrawerMenuItem name={'Contact us'} onClick={navigateToContactUs} />
                         <Line />
                         <DrawerMenuItem name={'Settings'} />
                         <Line />

@@ -3,14 +3,14 @@ import React from 'react'
 import { AntDesign } from '@expo/vector-icons';
 import { router } from 'expo-router'
 
-const BackButton = ({ marginBottom = 0 }) => {
+const BackButton = ({ marginBottom = 0, marginTop = 10 }) => {
 
     const handleBack = () => {
         router.back();
     }
 
     return (
-        <TouchableOpacity onPress={handleBack} style={{ marginBottom: marginBottom, marginTop: 10 }}>
+        <TouchableOpacity onPress={handleBack} style={{ marginBottom: marginBottom, marginTop: marginTop }}>
             <AntDesign name="arrowleft" size={24} color="black" />
         </TouchableOpacity>
     )
