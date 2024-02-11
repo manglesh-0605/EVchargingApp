@@ -11,6 +11,7 @@ import Line from '../../components/profile/line';
 import Advert from '../../components/classifieds/Advert';
 import MapView from 'react-native-maps';
 import Search from '../../components/SearchBar';
+import DrawerButton from '../../components/DrawerButton';
 
 
 
@@ -31,20 +32,16 @@ const Page = () => {
         width: '100%',
         flexDirection: 'row',
         justifyContent: 'space-between',
-        gap: scale(20)
+        gap: scale(20),
+        alignItems: 'center'
       }}>
         <View style={{ flex: 1 }}>
           <Search placeholder={"Search"} />
         </View>
 
         {/* This will be drawer */}
+        <DrawerButton />
 
-        <View style={{
-          width: scale(40),
-          backgroundColor: 'red'
-        }}>
-
-        </View>
       </View>
 
       {/* ADVERTISMENT */}

@@ -11,6 +11,7 @@ import ClassifiedsCategoryItem from '../../../components/classifieds/ClassifiedC
 import ClassifiedItemCard from '../../../components/classifieds/ClassifiedItemCard';
 import Advert from '../../../components/classifieds/Advert';
 import CustomButton from '../../../components/CustomButton';
+import DrawerButton from '../../../components/DrawerButton';
 
 
 const Page = () => {
@@ -21,7 +22,17 @@ const Page = () => {
     return (
         <SafeAreaView edges={['top']} style={styles.container}>
 
-            <Text style={styles.title}>Classifieds</Text>
+            <View style={{
+                marginTop: 30,
+                flexDirection: 'row',
+                justifyContent: 'space-between',
+                alignItems: 'center'
+            }}>
+                <Text style={styles.title}>Classifieds</Text>
+                <DrawerButton />
+
+            </View>
+
 
             <View style={{
                 gap: scale(10)
@@ -103,6 +114,5 @@ const styles = StyleSheet.create({
     title: {
         fontWeight: '700',
         fontSize: 24,
-        marginTop: 30,
     }
 })
