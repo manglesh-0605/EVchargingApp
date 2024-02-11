@@ -1,5 +1,6 @@
 import { combineReducers } from "redux";
-import themereducer from './themereducer';
+import Themereducer from './themereducer';
+import DrawerReducer from "./drawerReducer";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { persistReducer } from "redux-persist";
 
@@ -11,5 +12,7 @@ const themePersistConfig = {
 }
 
 export default combineReducers({
-    themeReducer: persistReducer(themePersistConfig, themereducer),
+    ThemeReducer: persistReducer(themePersistConfig, Themereducer),
+    DrawerReducer,
+
 });

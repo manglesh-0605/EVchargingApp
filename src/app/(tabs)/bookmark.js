@@ -11,7 +11,6 @@ import SearchBar from '../../components/SearchBar';
 
 const Bookmark = () => {
     const dispatch = useDispatch();
-    const { isDark } = useSelector((state) => state.themeReducer);
 
     const [searchValue, setSearchValue] = useState('')
     return (

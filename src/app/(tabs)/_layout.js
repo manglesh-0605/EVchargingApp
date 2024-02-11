@@ -9,7 +9,8 @@ import ThemeConstant from '../../constants/ThemeConstant';
 
 const TabsLayout = () => {
     return (
-        <Tabs screenOptions={{
+        <Tabs
+            screenOptions={{
             headerShown: false,
             tabBarShowLabel: false,
             tabBarIconStyle: {

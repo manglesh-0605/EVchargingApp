@@ -16,7 +16,6 @@ import DrawerButton from '../../../components/DrawerButton';
 
 const Page = () => {
     const dispatch = useDispatch();
-    const { isDark } = useSelector((state) => state.themeReducer);
 
     const [searchValue, setSearchValue] = useState('')
     return (

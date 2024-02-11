@@ -14,7 +14,7 @@ import { router } from 'expo-router';
 
 const Profile = () => {
     const dispatch = useDispatch();
-    const { isDark } = useSelector((state) => state.themeReducer);
+    const { isDark } = useSelector((state) => state.ThemeReducer);
     return (
         <SafeAreaView edges={['top']} style={styles.container}>
             <View style={{

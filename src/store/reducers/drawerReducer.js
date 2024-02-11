@@ -1,21 +1,23 @@
-import { SET_THEME } from '../allactionsTypes';
+import { SET_DRAWER } from "../allactionsTypes";
 
 
 const initialState = {
-    isDark: false
-};
-
-export default function ThemeReducer(state = initialState, action) {
+    drawerOpened: true
+}
+export default function DrawerReducer(state = initialState, action) {
     const { type, payload } = action;
+
     switch (type) {
-        case SET_THEME:
+        case SET_DRAWER:
             return {
                 ...state,
-                isDark: payload,
+                drawerOpened: payload
             };
         default:
             return {
                 ...state,
             };
+
     }
+
 }

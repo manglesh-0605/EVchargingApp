@@ -1,17 +1,14 @@
 import { StyleSheet, Text, View, useWindowDimensions, Image, ScrollView, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context';
-import Carousel from 'react-native-reanimated-carousel';
-import BackButton from '../../components/BackButton';
-import { Entypo } from '@expo/vector-icons';
 import ThemeConstant from '../../constants/ThemeConstant';
-import { moderateVerticalScale, scale } from 'react-native-size-matters';
+import { scale } from 'react-native-size-matters';
 import { AntDesign, FontAwesome, MaterialIcons, MaterialCommunityIcons } from '@expo/vector-icons';
-import Line from '../../components/profile/line';
 import Advert from '../../components/classifieds/Advert';
 import MapView from 'react-native-maps';
 import Search from '../../components/SearchBar';
 import DrawerButton from '../../components/DrawerButton';
+import DrawerModal from '../../components/DarwerModal';
 
 
 
@@ -40,7 +37,7 @@ const Page = () => {
         </View>
 
         {/* This will be drawer */}
-        <DrawerButton />
+        <DrawerButton/>
 
       </View>
 

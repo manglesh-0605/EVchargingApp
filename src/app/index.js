@@ -1,18 +1,13 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React, { useEffect } from 'react'
-import { router } from 'expo-router'
+import { Redirect, router } from 'expo-router'
 
 
 const Page = () => {
 
-    useEffect(() => {
-        setTimeout(() => {
-            router.replace('/(tabs)')
-        }, 0)
-    }, [])
     return (
-        <>
-        </>
+
+        <Redirect href={'(tabs)'} />
     )
 }
 
