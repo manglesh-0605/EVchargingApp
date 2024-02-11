@@ -22,6 +22,10 @@ const DrawerModal = () => {
     const navigateToTips = () => {
         router.push('/tipsandtricks')
     }
+
+    const navigateToNotification = () => {
+        router.push('/notification')
+    }
     return (
         <Modal
             animationType="fade"
@@ -59,7 +63,7 @@ const DrawerModal = () => {
                         <Line />
                         <DrawerMenuItem name={'Contact us'} onClick={navigateToContactUs} />
                         <Line />
-                        <DrawerMenuItem name={'Settings'} />
+                        <DrawerMenuItem name={'Settings'} onClick={navigateToNotification} />
                         <Line />
                     </View>
                 </View>
