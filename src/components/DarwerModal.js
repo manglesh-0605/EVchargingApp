@@ -18,6 +18,10 @@ const DrawerModal = () => {
     const navigateToContactUs = () => {
         router.push('/contact_us')
     }
+
+    const navigateToTips = () => {
+        router.push('/tipsandtricks')
+    }
     return (
         <Modal
             animationType="fade"
@@ -49,7 +53,7 @@ const DrawerModal = () => {
                     }}>
                         <DrawerMenuItem name={'About us'} />
                         <Line />
-                        <DrawerMenuItem name={'Tips & Tricks '} />
+                        <DrawerMenuItem name={'Tips & Tricks '} onClick={navigateToTips} />
                         <Line />
                         <DrawerMenuItem name={'Advertise with us'} />
                         <Line />

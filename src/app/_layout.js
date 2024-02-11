@@ -23,6 +23,8 @@ const RootLayout = () => {
                         <Stack.Screen name='forgotpassword' />
                         <Stack.Screen name='resetpassword' />
                         <Stack.Screen name='contact_us' />
+                        <Stack.Screen name='tipsandtricks' />
+                        <Stack.Screen name='tipsandtricksDetails' />
 
                         <Stack.Screen name='(tabs)' options={{
                             headerShown: false

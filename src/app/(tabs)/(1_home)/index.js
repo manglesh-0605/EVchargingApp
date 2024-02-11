@@ -18,7 +18,13 @@ const Page = () => {
   return (
     <SafeAreaView edges={[]} style={styles.container}>
 
-      <MapView style={styles.map} />
+      <MapView
+        style={styles.map}
+        provider={'google'}
+        showsUserLocation
+        showsMyLocationButton
+
+      />
 
 
       <View style={{
@@ -38,7 +44,7 @@ const Page = () => {
         </View>
 
         {/* This will be drawer */}
-        <DrawerButton/>
+        <DrawerButton />
 
       </View>
 
