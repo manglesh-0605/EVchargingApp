@@ -1,19 +1,20 @@
 import { StyleSheet, Text, View, useWindowDimensions, Image, ScrollView, TouchableOpacity } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context';
-import ThemeConstant from '../../constants/ThemeConstant';
+import ThemeConstant from '../../../constants/ThemeConstant';
 import { scale } from 'react-native-size-matters';
 import { AntDesign, FontAwesome, MaterialIcons, MaterialCommunityIcons } from '@expo/vector-icons';
-import Advert from '../../components/classifieds/Advert';
+import Advert from '../../../components/classifieds/Advert';
 import MapView from 'react-native-maps';
-import Search from '../../components/SearchBar';
-import DrawerButton from '../../components/DrawerButton';
-import DrawerModal from '../../components/DarwerModal';
+import Search from '../../../components/SearchBar';
+import DrawerButton from '../../../components/DrawerButton';
 
 
 
 const Page = () => {
   const { width } = useWindowDimensions();
+  const [searchValue, setSearchValue] = useState('')
+
   return (
     <SafeAreaView edges={[]} style={styles.container}>
 
@@ -33,7 +34,7 @@ const Page = () => {
         alignItems: 'center'
       }}>
         <View style={{ flex: 1 }}>
-          <Search placeholder={"Search"} />
+          <Search placeholder={"Search"} value={searchValue} setValue={setSearchValue} />
         </View>
 
         {/* This will be drawer */}

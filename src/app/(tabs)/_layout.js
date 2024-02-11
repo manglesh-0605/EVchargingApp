@@ -18,7 +18,7 @@ const TabsLayout = () => {
             }
             
         }}>
-            <Tabs.Screen name='index' options={{
+            <Tabs.Screen name='(1_home)' options={{
                 headerTitle: 'Home',
                 tabBarIcon: ({ focused }) => {
                     return (
@@ -35,7 +35,7 @@ const TabsLayout = () => {
                     )
                 }
             }} />
-            <Tabs.Screen name='(classifieds)' options={{
+            <Tabs.Screen name='(2_classifieds)' options={{
                 tabBarIcon: ({ focused }) => {
                     return (
                         <View style={{
