@@ -1,42 +1,36 @@
 import React, { useState } from 'react';
-import { View, Text, TouchableOpacity, Image, StyleSheet } from 'react-native';
-import * as ImagePicker from 'react-native-image-picker';
+import { View, Text, TouchableOpacity, Image, StyleSheet, Button } from 'react-native';
+import * as ImagePicker from 'expo-image-picker';
 import { moderateVerticalScale, scale } from 'react-native-size-matters';
 import ThemeConstant from '../../constants/ThemeConstant';
 
-const ImagePickerComp = () => {
-    const [imageUri, setImageUri] = useState(null);
+const ImagePickerComp = ({ image, setImage }) => {
 
-    const handleImagePicker = () => {
-        const options = {
-            title: 'Select Image',
-            storageOptions: {
-                skipBackup: true,
-                path: 'images',
-            },
-        };
-
-        ImagePicker.launchImageLibrary(options, (response) => {
-            if (response.didCancel) {
-                console.log('Image picker cancelled');
-            } else if (response.error) {
-                console.error('Image picker error:', response.error);
-            } else {
-                setImageUri(response.uri);
-            }
+    const pickImage = async () => {
+        // No permissions request is necessary for launching the image library
+        let result = await ImagePicker.launchImageLibraryAsync({
+            mediaTypes: ImagePicker.MediaTypeOptions.All,
+            allowsEditing: true,
+            aspect: [4, 3],
+            quality: 1,
         });
+
+        console.log(result);
+
+        if (!result.canceled) {
+            setImage(result.assets[0].uri);
+        }
     };
 
     return (
-        <TouchableOpacity onPress={handleImagePicker}>
+        <TouchableOpacity onPress={pickImage}>
             <View style={styles.imagePickerContainer}>
-                {imageUri ? (
-                    <Image source={{ uri: imageUri }} style={styles.imagePreview} />
+                {image ? (
+                    <Image source={{ uri: image }} style={styles.imagePreview} />
                 ) : (
                     <View style={{ justifyContent: 'center', alignItems: 'center' }}>
                         <Text style={{ fontWeight: '700', fontSize: scale(12), color: ThemeConstant.PRIMARY_COLOR }}>Click to Upload Images</Text>
-                        <Text style={{ fontWeight: '400', fontSize: scale(8), color: ThemeConstant.FADED_BLACK }}>jpg and png only</Text>
-
+                            <Text style={{ fontWeight: '400', fontSize: scale(8), color: ThemeConstant.FADED_BLACK }}>jpg and png only</Text>
                     </View>
                 )}
             </View>
@@ -51,7 +45,7 @@ const styles = StyleSheet.create({
         borderStyle: 'dashed',
         alignItems: 'center',
         justifyContent: 'center',
-        height: moderateVerticalScale(80),
+        height: moderateVerticalScale(120),
         borderRadius: scale(5)
     },
     imagePreview: {

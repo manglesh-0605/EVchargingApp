@@ -1,6 +1,6 @@
 // DrawerModal.js
 import React, { useState } from 'react';
-import { Modal, View, StyleSheet, TouchableOpacity, Text, TextInput } from 'react-native';
+import { Modal, View, StyleSheet, TouchableOpacity, Text, TextInput, Keyboard } from 'react-native';
 import { moderateVerticalScale, scale } from 'react-native-size-matters';
 import { Entypo } from '@expo/vector-icons';
 import ThemeConstant from '../../constants/ThemeConstant';
@@ -11,6 +11,13 @@ import ImagePickerComp from './ImagePickerComp';
 const AddReviewModal = ({ isVisible, setIsVisible }) => {
     const [message, setMessage] = useState("")
     const [rating, setRating] = useState(null);
+    const [image, setImage] = useState('')
+
+    const _handleReviewSubmit = () => {
+        console.log('message', message);
+        console.log('rating', rating);
+        console.log('image', image);
+    }
 
     return (
         <Modal
@@ -20,7 +27,7 @@ const AddReviewModal = ({ isVisible, setIsVisible }) => {
             onRequestClose={() => setIsVisible(false)}
         >
             <View style={styles.modalContainer}>
-                <View style={styles.drawerContent}>
+                <TouchableOpacity style={styles.drawerContent} onPress={Keyboard.dismiss} activeOpacity={1}>
 
 
                     {/* TOP */}
@@ -69,13 +76,16 @@ const AddReviewModal = ({ isVisible, setIsVisible }) => {
 
 
                     {/* UPLOAD IMAGE */}
-                    <ImagePickerComp />
+                    <ImagePickerComp image={image} setImage={setImage} />
 
 
 
-                    <CustomButton title={"Submit"} />
+                    <CustomButton title={"Submit"} onPress={_handleReviewSubmit} />
 
-                </View>
+
+
+
+                </TouchableOpacity>
             </View>
         </Modal >
     );
@@ -90,7 +100,7 @@ const styles = StyleSheet.create({
     },
     drawerContent: {
         width: '85%',
-        height: '65%',
+        height: '70%',
         backgroundColor: 'white',
         gap: scale(20),
         shadowColor: "#000",
