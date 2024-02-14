@@ -336,9 +336,13 @@ const StationDetail = () => {
 
                 }}>
                     <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
-                        <Text style={{ fontWeight: '700', fontSize: scale(12) }}>Chargers</Text>
+                        <View style={{ flexDirection: 'row' }}>
+                            <Text style={{ fontWeight: '700', fontSize: scale(12), color: ThemeConstant.PRIMARY_COLOR }}>Open</Text>
+                            <Text style={{ fontWeight: '700', fontSize: scale(12) }}> - Timings</Text>
+
+                        </View>
                         <TouchableOpacity onPress={() => setTimingShowing(!timingsShowing)}>
-                            <Entypo name={chargersShowing ? "chevron-small-up" : "chevron-small-down"} size={24} color="black" />
+                            <Entypo name={timingsShowing ? "chevron-small-up" : "chevron-small-down"} size={24} color="black" />
                         </TouchableOpacity>
                     </View>
 
