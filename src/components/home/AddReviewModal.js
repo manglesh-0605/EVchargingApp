@@ -58,6 +58,7 @@ const AddReviewModal = ({ isVisible, setIsVisible }) => {
                         borderRadius: scale(5)
                     }}>
                         <TextInput
+
                             value={message}
                             onChangeText={txt => {
                                 if (txt.length <= 200) {
@@ -69,7 +70,8 @@ const AddReviewModal = ({ isVisible, setIsVisible }) => {
                             placeholder='Write feedback'
                             maxLength={200}
                             style={{
-                                flex: 1
+                                flex: 1,
+                                textAlignVertical: 'top'
                             }}
                         />
                     </View>
@@ -100,7 +102,6 @@ const styles = StyleSheet.create({
     },
     drawerContent: {
         width: '85%',
-        height: '70%',
         backgroundColor: 'white',
         gap: scale(20),
         shadowColor: "#000",

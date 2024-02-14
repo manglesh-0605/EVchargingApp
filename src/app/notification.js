@@ -124,6 +124,7 @@ const Notification = () => {
             </View>
 
             <FlatList
+                showsVerticalScrollIndicator={false}
                 data={NOTIFICATIONS.AllNotifications}
                 contentContainerStyle={{ gap: scale(20) }}
                 keyExtractor={Item => Item.date}

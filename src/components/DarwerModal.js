@@ -28,6 +28,7 @@ const DrawerModal = () => {
     }
     return (
         <Modal
+            statusBarTranslucent
             animationType="fade"
             transparent={true}
             visible={drawerOpened}

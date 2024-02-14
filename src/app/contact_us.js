@@ -56,7 +56,7 @@ const Contactus = () => {
             <Text style={{ fontWeight: '400', fontSize: scale(14), marginTop: scale(30), marginBottom: moderateVerticalScale(20) }}>Feel free to reach out through the contact form below</Text>
             <Line />
 
-            <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ paddingBottom: moderateVerticalScale(100) }}>
+            <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ paddingBottom: moderateVerticalScale(150) }}>
 
 
                 <View style={{
@@ -123,7 +123,8 @@ const Contactus = () => {
                             placeholder='Your Message'
                             maxLength={200}
                             style={{
-                                flex: 1
+                                flex: 1,
+                                textAlignVertical: 'top'
                             }}
                         />
                     </View>

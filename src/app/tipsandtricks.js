@@ -52,7 +52,7 @@ const Tipsandtricks = () => {
 
             <Search placeholder={"Search and article"} value={searchValue} setValue={setSearchValue} />
 
-            <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ paddingBottom: moderateVerticalScale(120), gap: scale(20), marginTop: moderateVerticalScale(20) }}>
+            <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ paddingBottom: moderateVerticalScale(150), gap: scale(20), marginTop: moderateVerticalScale(20) }}>
 
 
                 <View style={{

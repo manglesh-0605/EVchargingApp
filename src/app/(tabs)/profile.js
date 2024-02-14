@@ -87,7 +87,8 @@ const Profile = () => {
                     <Line />
                     <View style={{
                         flexDirection: 'row',
-                        justifyContent: 'space-between'
+                        justifyContent: 'space-between',
+                        alignItems: 'center'
                     }}>
                         <Text style={{
                             fontWeight: '600',
@@ -98,7 +99,7 @@ const Profile = () => {
 
                         <View>
                             <Switch
-                                trackColor={{ false: 'red', true: '#3e3e3e' }}
+                                trackColor={{ false: '#d3d3d3', true: '#3e3e3e' }}
                                 thumbColor={'#fff'}
                                 ios_backgroundColor="#fff"
                                 onValueChange={() => { dispatch({ type: SET_THEME, payload: isDark ? false : true }) }}
@@ -110,7 +111,8 @@ const Profile = () => {
 
                     <View style={{
                         flexDirection: 'row',
-                        justifyContent: 'space-between'
+                        justifyContent: 'space-between',
+                        alignItems: 'center'
                     }}>
                         <Text style={{
                             color: '#ff0000',
