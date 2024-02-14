@@ -22,7 +22,11 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "permissions": [
+        "android.permission.RECORD_AUDIO"
+      ],
+      "package": "com.manglesh_0605.EVchargingapp"
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -35,6 +39,14 @@
           "photosPermission": "The app accesses your photos to let you share them with your friends."
         }
       ]
-    ]
+    ],
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "5bc40a73-2134-431d-9247-3caaa298a8c7"
+      }
+    }
   }
 }

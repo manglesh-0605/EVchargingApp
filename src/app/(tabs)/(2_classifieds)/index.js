@@ -33,10 +33,11 @@ const Page = () => {
             </View>
 
 
-            <View style={{
-                gap: scale(10)
-            }}>
+            <View>
                 <SearchBar placeholder={"Search"} value={searchValue} setValue={setSearchValue} />
+            </View>
+
+            <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ gap: scale(20), paddingBottom: moderateVerticalScale(100) }}>
                 <View style={{
                     flexDirection: 'row',
                     justifyContent: 'space-between',
@@ -51,9 +52,6 @@ const Page = () => {
                     <ClassifiedsCategoryItem category={'Cloths'} selected={false} iconName={'tshirt-crew'} />
                     <ClassifiedsCategoryItem category={'Electronics'} selected={false} iconName={'radio'} />
                 </View>
-            </View>
-
-            <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ gap: scale(20) }}>
                 <Advert url={'https://www.wordstream.com/wp-content/uploads/2021/07/banner-ads-examples-ncino.jpg'} />
 
                 <View style={{
