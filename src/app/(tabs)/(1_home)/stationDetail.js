@@ -10,6 +10,7 @@ import { AntDesign, FontAwesome, FontAwesome5, Feather } from '@expo/vector-icon
 import Line from '../../../components/profile/line';
 import MapView from 'react-native-maps';
 import CustomButton from '../../../components/CustomButton';
+import AddReviewModal from '../../../components/home/AddReviewModal';
 
 const AMENITIES = {
     amenities: [
@@ -110,6 +111,7 @@ const StationDetail = () => {
     const { width } = useWindowDimensions();
     const [chargersShowing, setChargersShowing] = useState(true);
     const [timingsShowing, setTimingShowing] = useState(true);
+    const [reviewModalVisible, setReviewModalVisible] = useState(false)
     return (
         <SafeAreaView edges={['top']} style={styles.container}>
 
@@ -222,7 +224,7 @@ const StationDetail = () => {
                 {/* BUTTONS       */}
                 <View style={{ gap: scale(8), flexDirection: 'row' }}>
                     <View style={{ width: '50%' }}>
-                        <CustomButton title={"Add Review"} type='outline' />
+                        <CustomButton title={"Add Review"} type='outline' onPress={() => setReviewModalVisible(true)} />
 
                     </View>
                     <View style={{ width: '50%' }}>
@@ -391,6 +393,9 @@ const StationDetail = () => {
                 </View>
 
             </ScrollView>
+
+
+            <AddReviewModal isVisible={reviewModalVisible} setIsVisible={setReviewModalVisible} />
         </SafeAreaView>
     )
 }
