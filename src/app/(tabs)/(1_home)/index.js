@@ -8,12 +8,14 @@ import Advert from '../../../components/classifieds/Advert';
 import MapView from 'react-native-maps';
 import Search from '../../../components/SearchBar';
 import DrawerButton from '../../../components/DrawerButton';
+import HomeModal from '../../../components/home/HomeModal';
 
 
 
 const Page = () => {
   const { width } = useWindowDimensions();
   const [searchValue, setSearchValue] = useState('')
+  const [isModalVisible, setIsModalVisible] = useState(false);
 
   return (
     <SafeAreaView edges={[]} style={styles.container}>
@@ -81,11 +83,14 @@ const Page = () => {
           <FontAwesome name="bullseye" size={24} color="white" />
         </TouchableOpacity>
 
-        <TouchableOpacity activeOpacity={0.9} style={styles.iconContainer}>
+        <TouchableOpacity onPress={() => setIsModalVisible(true)} activeOpacity={0.9} style={styles.iconContainer}>
           <MaterialIcons name="add-location" size={24} color="#fff" />
         </TouchableOpacity>
 
       </View>
+
+      {/* MODAL */}
+      <HomeModal isVisible={isModalVisible} setIsVisible={setIsModalVisible} />
 
     </SafeAreaView>
   )

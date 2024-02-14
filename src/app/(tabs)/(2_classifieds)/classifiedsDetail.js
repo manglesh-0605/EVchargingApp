@@ -27,7 +27,8 @@ const ClassifiedsDetail = () => {
                     position: 'absolute',
                     width: '100%',
                     paddingHorizontal: ThemeConstant.PADDING_MAIN,
-                    zIndex: 2
+                    zIndex: 2,
+                    top: moderateVerticalScale(10)
                 }}>
                     <BackButton />
                     <Entypo name="dots-three-vertical" size={24} color="black" />
