@@ -41,7 +41,7 @@ const Page = () => {
                     flexDirection: 'row',
                     justifyContent: 'space-between',
                     flexWrap: 'wrap',
-                    rowGap: scale(6),
+                    rowGap: scale(10),
                     columnGap: scale(6)
                 }}>
                     <ClassifiedsCategoryItem category={'Property'} selected={true} iconName={'greenhouse'} />

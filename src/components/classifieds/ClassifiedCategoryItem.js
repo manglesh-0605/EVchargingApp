@@ -1,8 +1,9 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { Dimensions, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { moderateScale, scale } from 'react-native-size-matters'
 import ThemeConstant from '../../constants/ThemeConstant'
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+const { width } = Dimensions.get('window');
 
 const ClassifiedsCategoryItem = ({ category, selected, iconName }) => {
     return (
@@ -18,8 +19,9 @@ export default ClassifiedsCategoryItem;
 
 const styles = StyleSheet.create({
     categoryContainer: {
-        width: moderateScale(100),
-        height: moderateScale(100),
+        width: '31%',
+        height: width * 0.31,
+        // aspectRatio: 1 / 1,
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: '#fff',
