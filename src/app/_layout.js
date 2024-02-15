@@ -6,6 +6,7 @@ import { Provider } from 'react-redux'
 import { PersistGate } from 'redux-persist/lib/integration/react'
 import { GestureHandlerRootView } from 'react-native-gesture-handler'
 import DrawerModal from '../components/DarwerModal';
+import Routes from '../constants/Routes';
 
 const RootLayout = () => {
     return (
@@ -16,18 +17,18 @@ const RootLayout = () => {
                     <Stack screenOptions={{
                         headerShown: false
                     }}>
-                        <Stack.Screen name='index' />
-                        <Stack.Screen name='login' />
-                        <Stack.Screen name='signup' />
-                        <Stack.Screen name='otp' />
-                        <Stack.Screen name='forgotpassword' />
-                        <Stack.Screen name='resetpassword' />
-                        <Stack.Screen name='contact_us' />
-                        <Stack.Screen name='tipsandtricks' />
-                        <Stack.Screen name='tipsandtricksDetails' />
-                        <Stack.Screen name='notification' />
+                        <Stack.Screen name={Routes.HOME} />
+                        <Stack.Screen name={Routes.LOGIN} />
+                        <Stack.Screen name={Routes.SIGNUP} />
+                        <Stack.Screen name={Routes.OTP} />
+                        <Stack.Screen name={Routes.FORGOT_PASSWORD} />
+                        <Stack.Screen name={Routes.RESET_PASSWORD} />
+                        <Stack.Screen name={Routes.CONTACT_US} />
+                        <Stack.Screen name={Routes.TIPS_TRICKS} />
+                        <Stack.Screen name={Routes.TIPS_TRICKS_DETAIL} />
+                        <Stack.Screen name={Routes.NOTIFICATION} />
 
-                        <Stack.Screen name='(tabs)' options={{
+                        <Stack.Screen name={Routes.TABS} options={{
                             headerShown: false
                         }} />
 

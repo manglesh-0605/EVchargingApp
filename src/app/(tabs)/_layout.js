@@ -6,6 +6,7 @@ import { Feather } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
 import { moderateScale, scale } from 'react-native-size-matters';
 import ThemeConstant from '../../constants/ThemeConstant';
+import Routes from '../../constants/Routes';
 
 const TabsLayout = () => {
     return (
@@ -18,7 +19,7 @@ const TabsLayout = () => {
             }
             
         }}>
-            <Tabs.Screen name='(1_home)' options={{
+            <Tabs.Screen name={Routes.HOEM_TAB} options={{
                 headerTitle: 'Home',
                 tabBarIcon: ({ focused }) => {
                     return (
@@ -35,7 +36,7 @@ const TabsLayout = () => {
                     )
                 }
             }} />
-            <Tabs.Screen name='(2_classifieds)' options={{
+            <Tabs.Screen name={Routes.CLASSIFIED_TAB} options={{
                 tabBarIcon: ({ focused }) => {
                     return (
                         <View style={{
@@ -51,7 +52,7 @@ const TabsLayout = () => {
                     )
                 }
             }} />
-            <Tabs.Screen name='bookmark' options={{
+            <Tabs.Screen name={Routes.BOOKMARK} options={{
                 tabBarIcon: ({ focused }) => {
                     return (
                         <View style={{
@@ -67,7 +68,7 @@ const TabsLayout = () => {
                     )
                 }
             }} />
-            <Tabs.Screen name='profile' options={{
+            <Tabs.Screen name={Routes.PROFILE} options={{
                 tabBarIcon: ({ focused }) => {
                     return (
                         <View style={{
