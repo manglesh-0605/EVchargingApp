@@ -7,12 +7,12 @@ import ThemeConstant from '../../constants/ThemeConstant';
 import { router } from 'expo-router'
 import Routes from '../../constants/Routes';
 
-const Onboading3 = () => {
+const Onboading2 = () => {
     return (
         <SafeAreaView style={styles.container}>
 
             <View style={styles.img}>
-                <Image source={Img1} />
+                <Image style={{ height: '100%' }} source={Img1} />
             </View>
             <Text style={styles.title1}>Save as </Text>
             <Text style={styles.title2}>Favourite</Text>
@@ -20,7 +20,8 @@ const Onboading3 = () => {
 
             <View style={{
                 flexDirection: 'row',
-                marginBottom: moderateScale(70)
+                marginBottom: moderateScale(70),
+                gap: scale(10)
             }}>
                 <View style={[styles.bar, { backgroundColor: ThemeConstant.PRIMARY_COLOR }]} />
                 <View style={[styles.bar, { backgroundColor: ThemeConstant.PRIMARY_COLOR }]} />
@@ -39,7 +40,7 @@ const Onboading3 = () => {
                 </TouchableOpacity>
 
                 <Pressable
-                    onPress={() => { router.replace(`${Routes.LOGIN}`) }}
+                    onPress={() => { router.replace(`${Routes.LOGIN}`); }}
                     style={{
                         backgroundColor: ThemeConstant.PRIMARY_COLOR,
                         paddingHorizontal: moderateScale(40),
@@ -53,7 +54,7 @@ const Onboading3 = () => {
     )
 }
 
-export default Onboading3;
+export default Onboading2
 
 const styles = StyleSheet.create({
     container: {
@@ -62,31 +63,30 @@ const styles = StyleSheet.create({
         paddingHorizontal: ThemeConstant.PADDING_MAIN
     },
     title1: {
-        fontSize: scale(16),
+        fontSize: scale(12),
         color: '#000',
         fontWeight: '700'
     },
     title2: {
-        fontSize: scale(30),
+        fontSize: scale(26),
         color: '#000',
         fontWeight: '700',
-        marginBottom: moderateScale(16)
+        marginBottom: moderateScale(12)
     },
     subTitle: {
-        fontSize: scale(16),
+        fontSize: scale(12),
         color: '#999',
-        marginBottom: moderateVerticalScale(23)
+        marginBottom: moderateVerticalScale(18)
     },
     img: {
-        marginTop: moderateScale(106),
-        marginBottom: moderateScale(81),
+        marginVertical: scale(50),
         alignItems: 'center',
+        height: moderateVerticalScale(250)
     },
     bar: {
         height: moderateVerticalScale(5),
         width: moderateScale(25),
         backgroundColor: '#e4e4e4',
-        borderRadius: 100,
-        marginRight: moderateScale(10)
+        borderRadius: scale(100),
     }
 })
