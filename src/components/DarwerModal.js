@@ -10,21 +10,22 @@ import ThemeConstant from '../constants/ThemeConstant';
 import DrawerMenuItem from './DrawerMenuItem';
 import Line from './profile/line';
 import { router } from 'expo-router';
+import Routes from '../constants/Routes';
 
 const DrawerModal = () => {
     const dispatch = useDispatch();
     const { drawerOpened } = useSelector(state => state.DrawerReducer)
 
     const navigateToContactUs = () => {
-        router.push('/contact_us')
+        router.push(`${Routes.CONTACT_US}`)
     }
 
     const navigateToTips = () => {
-        router.push('/tipsandtricks')
+        router.push(`${Routes.TIPS_TRICKS}`)
     }
 
     const navigateToNotification = () => {
-        router.push('/notification')
+        router.push(`${Routes.NOTIFICATION}`)
     }
     return (
         <Modal

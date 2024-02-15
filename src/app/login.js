@@ -7,6 +7,7 @@ import { AntDesign } from '@expo/vector-icons';
 import ThemeConstant from '../constants/ThemeConstant';
 import CustomButton from '../components/CustomButton';
 import BackButton from '../components/BackButton';
+import Routes from '../constants/Routes';
 
 
 const LoginScreen = () => {
@@ -15,7 +16,7 @@ const LoginScreen = () => {
 
     const handleLogin = () => {
         // Implement your login logic here
-        router.push('/otp');
+        router.push(`${Routes.OTP}`);
         console.log('Login button pressed');
         console.log('Username:', username);
         console.log('Password:', password);
@@ -27,7 +28,7 @@ const LoginScreen = () => {
     };
 
     const handleSignup = () => {
-        router.push('/signup')
+        router.push(`${Routes.SIGNUP}`);
     }
 
 

@@ -8,6 +8,7 @@ import ThemeConstant from '../constants/ThemeConstant';
 import CustomButton from '../components/CustomButton';
 import BackButton from '../components/BackButton';
 import { moderateScale } from 'react-native-size-matters';
+import Routes from '../constants/Routes';
 
 
 const OtpScreen = () => {
@@ -22,7 +23,7 @@ const OtpScreen = () => {
     const handleLogin = () => {
         // Implement your login logic here
         console.log('Login button pressed');
-        router.replace('/(tabs)')
+        router.replace(`${Routes.TABS}`);
     };
 
 

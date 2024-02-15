@@ -5,6 +5,7 @@ import { moderateScale, moderateVerticalScale, scale } from 'react-native-size-m
 import { Entypo, AntDesign, FontAwesome } from '@expo/vector-icons';
 import ThemeConstant from '../../constants/ThemeConstant';
 import { router } from 'expo-router';
+import Routes from '../../constants/Routes';
 
 const HomeModal = ({ isVisible, setIsVisible }) => {
 
@@ -18,7 +19,7 @@ const HomeModal = ({ isVisible, setIsVisible }) => {
             <View style={styles.modalContainer}>
                 <TouchableOpacity activeOpacity={0.9} onPress={() => {
                     setIsVisible(false)
-                    router.push('(1_home)/stationDetail');
+                    router.push(`${Routes.HOME_STATION_DETAIL}`);
                 }}>
                     <View style={styles.drawerContent}>
 

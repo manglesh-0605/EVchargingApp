@@ -5,6 +5,7 @@ import { moderateScale, moderateVerticalScale, scale } from 'react-native-size-m
 import Img1 from '../../../assets/onboarding/frame3.png'
 import ThemeConstant from '../../constants/ThemeConstant';
 import { router } from 'expo-router'
+import Routes from '../../constants/Routes';
 
 const Onboading3 = () => {
     return (
@@ -33,12 +34,12 @@ const Onboading3 = () => {
                 justifyContent: 'space-between',
                 alignItems: 'center'
             }}>
-                <TouchableOpacity onPress={() => { router.push('/login') }}>
+                <TouchableOpacity onPress={() => { router.replace(`${Routes.LOGIN}`) }}>
                     <Text style={{ color: ThemeConstant.PRIMARY_COLOR, fontWeight: '700' }}>Skip</Text>
                 </TouchableOpacity>
 
                 <Pressable
-                    onPress={() => { router.push('/login') }}
+                    onPress={() => { router.replace(`${Routes.LOGIN}`) }}
                     style={{
                         backgroundColor: ThemeConstant.PRIMARY_COLOR,
                         paddingHorizontal: moderateScale(40),

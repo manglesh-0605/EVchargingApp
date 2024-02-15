@@ -10,6 +10,7 @@ import { MaterialIcons } from '@expo/vector-icons';
 import { useSelector, useDispatch } from 'react-redux';
 import { SET_THEME } from '../../store/allactionsTypes';
 import { router } from 'expo-router';
+import Routes from '../../constants/Routes';
 
 
 const Profile = () => {
@@ -122,7 +123,7 @@ const Profile = () => {
                             Logout
                         </Text>
 
-                        <TouchableOpacity onPress={() => { router.replace('/login') }}>
+                        <TouchableOpacity onPress={() => { router.replace(`${Routes.LOGIN}`); }}>
                             <MaterialIcons name="logout" size={24} color="#ff0000" />
                         </TouchableOpacity>
                     </View>

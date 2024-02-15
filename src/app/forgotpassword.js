@@ -7,6 +7,7 @@ import { AntDesign } from '@expo/vector-icons';
 import ThemeConstant from '../constants/ThemeConstant';
 import CustomButton from '../components/CustomButton';
 import BackButton from '../components/BackButton';
+import Routes from '../constants/Routes';
 
 
 const ForgotPassword = () => {
@@ -16,7 +17,7 @@ const ForgotPassword = () => {
     const handleLogin = () => {
         // Implement your login logic here
         console.log('Send OTP button pressed');
-        router.push('./resetpassword');
+        router.push(`${Routes.RESET_PASSWORD}`);
 
     };
 

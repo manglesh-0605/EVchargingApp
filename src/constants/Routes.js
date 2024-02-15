@@ -26,6 +26,11 @@ export default ROUTES = {
     HOEM_TAB: '(1_home)',
     CLASSIFIED_TAB: '(2_classifieds)',
     BOOKMARK: 'bookmark',
-    PROFILE: 'profile'
+    PROFILE: 'profile',
+
+    // ONBOADRIND
+    ONBOADRIND1: "onboarding/onboarding1",
+    ONBOADRIND2: "onboarding/onboarding2",
+    ONBOADRIND3: "onboarding/onboarding3"
 
 }

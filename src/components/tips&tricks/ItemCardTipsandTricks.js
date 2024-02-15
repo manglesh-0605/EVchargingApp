@@ -2,11 +2,12 @@ import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { moderateScale, moderateVerticalScale, scale } from 'react-native-size-matters'
 import { router } from 'expo-router'
+import Routes from '../../constants/Routes'
 
 const ItemCardTipsandTricks = ({ item }) => {
 
     const _handleNavigationToDetail = () => {
-        router.push('/tipsandtricksDetails')
+        router.push(`${Routes.TIPS_TRICKS_DETAIL}`)
     }
     return (
         <TouchableOpacity activeOpacity={0.9} onPress={_handleNavigationToDetail}>
