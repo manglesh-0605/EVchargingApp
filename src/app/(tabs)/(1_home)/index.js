@@ -112,6 +112,7 @@ const Page = () => {
             return (
               <TouchableOpacity key={index}>
                 <Marker
+                  image={PIN}
                   coordinate={{ latitude: item.location.latitude, longitude: item.location.longitude }}
                   onPress={() => {
                     setItemSelected(item)
