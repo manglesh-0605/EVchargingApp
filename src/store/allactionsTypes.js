@@ -3,3 +3,16 @@ export const SET_THEME = 'SET_THEME';
 export const SET_DRAWER = 'SET_DRAWER';
 
 
+// AUTHENTICATION RELATED--
+export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
+export const LOGIN_FAILED = 'LOGIN_FAILED';
+export const GET_USER_DETAILS = 'GET_USER_DATAILS';
+export const UPDATE_USER_DETAILS = 'UPDATE_USER_DETAILS';
+export const LOGOUT = 'LOGOUT';
+
+
+
+
+
+
+

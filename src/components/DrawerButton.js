@@ -20,7 +20,8 @@ const DrawerButton = () => {
             borderColor: ThemeConstant.PRIMARY_COLOR,
             justifyContent: 'center',
             alignItems: 'center',
-            borderRadius: scale(1000)
+                borderRadius: scale(1000),
+                backgroundColor: '#fff'
         }}>
             <Entypo name="menu" size={24} color={ThemeConstant.PRIMARY_COLOR} />
 

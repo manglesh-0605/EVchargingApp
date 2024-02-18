@@ -1,5 +1,5 @@
 import { StyleSheet, Text, View, useWindowDimensions, Image, ScrollView, TouchableOpacity, FlatList } from 'react-native'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context';
 import Carousel from 'react-native-reanimated-carousel';
 import BackButton from '../../../components/BackButton';
@@ -11,6 +11,87 @@ import Line from '../../../components/profile/line';
 import MapView from 'react-native-maps';
 import CustomButton from '../../../components/CustomButton';
 import AddReviewModal from '../../../components/home/AddReviewModal';
+import { useLocalSearchParams } from 'expo-router';
+
+const MAPDATA = [
+    {
+        "id": "1",
+        "name": "GreenCharge Station",
+        "location": {
+            "latitude": 37.7749,
+            "longitude": -122.4194
+        },
+        "address": "123 Main Street, City, State, 12345, Country",
+        "rating": 4.5,
+        "vehicleType": "Car",
+        "numPlugs": 8,
+        "numReviews": 120,
+        "isAvailable": true,
+        "price": "4,500"
+    },
+    {
+        "id": "2",
+        "name": "EcoPower Charging Hub",
+        "location": {
+            "latitude": 34.0522,
+            "longitude": -118.2437
+        },
+        "address": "456 Charging Avenue, Town, State, 54321, Country",
+        "rating": 4.2,
+        "vehicleType": "Car & Bike",
+        "numPlugs": 12,
+        "numReviews": 85,
+        "isAvailable": true,
+        "price": "6,000"
+    },
+    {
+        "id": "3",
+        "name": "SwiftCharge Point",
+        "location": {
+            "latitude": 40.7128,
+            "longitude": -74.0060
+        },
+        "address": "789 Electric Street, Metro, State, 67890, Country",
+        "rating": 4.8,
+        "vehicleType": "Car",
+        "numPlugs": 6,
+        "numReviews": 150,
+        "isAvailable": false,
+        "price": "3,500"
+    },
+    {
+        "id": "4",
+        "name": "CityBike Power Hub",
+        "location": {
+            "latitude": 51.5074,
+            "longitude": -0.1278
+        },
+        "address": "101 Bike Lane, City, State, 11111, Country",
+        "rating": 4.0,
+        "vehicleType": "Bike",
+        "numPlugs": 4,
+        "numReviews": 95,
+        "isAvailable": true,
+        "price": "2,500"
+    },
+    {
+        "id": "5",
+        "name": "GreenWheels Charging Station",
+        "location": {
+            "latitude": 41.8781,
+            "longitude": -87.6298
+        },
+        "address": "234 Renewable Road, Green City, State, 45678, Country",
+        "rating": 4.6,
+        "vehicleType": "Car",
+        "numPlugs": 10,
+        "numReviews": 110,
+        "isAvailable": true,
+        "price": "3,800"
+    }
+]
+
+
 
 const AMENITIES = {
     amenities: [
@@ -107,7 +188,22 @@ const TIMINGS = {
 
 
 
-const StationDetail = () => {
+const StationDetail = ({ route }) => {
+
+    const { id } = useLocalSearchParams();
+    const [details, setDetails] = useState({});
+
+    const getDataById = () => {
+        MAPDATA.forEach((item) => {
+            if (item.id == id) setDetails(item)
+        })
+    }
+
+    useEffect(() => {
+        getDataById();
+    }, [])
+
+    console.log(id)
     const { width } = useWindowDimensions();
     const [chargersShowing, setChargersShowing] = useState(true);
     const [timingsShowing, setTimingShowing] = useState(true);
@@ -162,11 +258,11 @@ const StationDetail = () => {
                 {/* STATION DETAILS */}
                 <View style={{ flexDirection: 'row', justifyContent: "space-between", }}>
 
-                    <View style={{ gap: scale(10) }}>
+                    <View style={{ gap: scale(10), flex: 1 }}>
                         <View style={{ gap: scale(10) }}>
-                            <Text style={{ fontWeight: '700', fontSize: scale(12) }}>AED 10,000/kwh</Text>
-                            <Text style={{ fontWeight: '700', fontSize: scale(16) }}>EV Charging Station</Text>
-                            <Text style={{ fontWeight: '400', fontSize: scale(10) }}>Villa 6 Zaglaba st 99, Dubai </Text>
+                            <Text style={{ fontWeight: '700', fontSize: scale(12) }}>{`AED ${details.price}/kwh`}</Text>
+                            <Text style={{ fontWeight: '700', fontSize: scale(16) }}>{details.name}</Text>
+                            <Text style={{ fontWeight: '400', fontSize: scale(10) }}>{details.address}</Text>
                         </View>
 
                         <View style={{ flexDirection: 'row', alignItems: 'center', gap: scale(8) }}>
@@ -184,17 +280,17 @@ const StationDetail = () => {
                                 }
                             </View>
 
-                            <Text style={{ fontWeight: '400', fontSize: scale(8), color: ThemeConstant.FADED_BLACK }}>(25 reviews)</Text>
+                            <Text style={{ fontWeight: '400', fontSize: scale(8), color: ThemeConstant.FADED_BLACK }}>({details.numReviews} reviews)</Text>
                         </View>
 
                         <View style={{ flexDirection: 'row', alignItems: 'center', gap: scale(10) }}>
                             <View style={{
-                                backgroundColor: ThemeConstant.PRIMARY_COLOR,
+                                backgroundColor: details.isAvailable ? ThemeConstant.PRIMARY_COLOR : "gray",
                                 borderRadius: scale(5),
                                 paddingHorizontal: moderateScale(10),
                                 paddingVertical: moderateVerticalScale(8)
                             }}>
-                                <Text style={{ fontWeight: '700', fontSize: scale(8), color: '#fff' }}>Available</Text>
+                                <Text style={{ fontWeight: '700', fontSize: scale(8), color: '#fff' }}>{details.isAvailable ? "Available" : "Unavailable"}</Text>
                             </View>
 
                             <View style={{ flexDirection: 'row', alignItems: 'center', gap: scale(2) }}>

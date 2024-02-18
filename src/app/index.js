@@ -8,7 +8,7 @@ const Page = () => {
 
     return (
 
-        <Redirect href={Routes.ONBOADRIND1} />
+        <Redirect href={Routes.TABS} />
     )
 }
 

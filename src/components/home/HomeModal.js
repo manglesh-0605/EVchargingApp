@@ -7,7 +7,7 @@ import ThemeConstant from '../../constants/ThemeConstant';
 import { router } from 'expo-router';
 import Routes from '../../constants/Routes';
 
-const HomeModal = ({ isVisible, setIsVisible }) => {
+const HomeModal = ({ isVisible, setIsVisible, item }) => {
 
     return (
         <Modal
@@ -19,19 +19,18 @@ const HomeModal = ({ isVisible, setIsVisible }) => {
             <View style={styles.modalContainer}>
                 <TouchableOpacity activeOpacity={0.9} onPress={() => {
                     setIsVisible(false)
-                    router.push(`${Routes.HOME_STATION_DETAIL}`);
+                    router.push({ pathname: `${Routes.HOME_STATION_DETAIL}`, params: { id: item.id } });
                 }}>
                     <View style={styles.drawerContent}>
-
 
                         <View style={{
                             flexDirection: 'row',
                             justifyContent: 'space-between'
                         }}>
                             <View style={{ gap: scale(10) }}>
-                                <Text style={{ fontWeight: '700', fontSize: scale(12) }}>AED 10,000/kwh</Text>
-                                <Text style={{ fontWeight: '700', fontSize: scale(16) }}>EV Charging Station</Text>
-                                <Text style={{ fontWeight: '400', fontSize: scale(10) }}>Villa 6 Zaglaba st 99, Dubai </Text>
+                                <Text style={{ fontWeight: '700', fontSize: scale(12) }}>{`AED ${item.price}/kwh`}</Text>
+                                <Text style={{ fontWeight: '700', fontSize: scale(16) }}>{item.name}</Text>
+                                <Text style={{ fontWeight: '400', fontSize: scale(10) }}>{item.address}</Text>
                             </View>
                             <TouchableOpacity onPress={() => setIsVisible(false)} >
                                 <Entypo name="cross" size={26} color="black" />
@@ -54,18 +53,18 @@ const HomeModal = ({ isVisible, setIsVisible }) => {
                                     }
                                 </View>
 
-                                <Text style={{ fontWeight: '400', fontSize: scale(8), color: ThemeConstant.FADED_BLACK }}>(25 reviews)</Text>
+                                <Text style={{ fontWeight: '400', fontSize: scale(8), color: ThemeConstant.FADED_BLACK }}>({item.numReviews} reviews)</Text>
                             </View>
                         </View>
 
                         <View style={{ flexDirection: 'row', alignItems: 'center', gap: scale(10) }}>
                             <View style={{
-                                backgroundColor: ThemeConstant.PRIMARY_COLOR,
+                                backgroundColor: item.isAvailable ? ThemeConstant.PRIMARY_COLOR : "gray",
                                 borderRadius: scale(5),
                                 paddingHorizontal: moderateScale(10),
                                 paddingVertical: moderateVerticalScale(8)
                             }}>
-                                <Text style={{ fontWeight: '700', fontSize: scale(8), color: '#fff' }}>Available</Text>
+                                <Text style={{ fontWeight: '700', fontSize: scale(8), color: '#fff' }}>{item.isAvailable ? "Available" : "UnAvailable"}</Text>
                             </View>
 
                             <View style={{ flexDirection: 'row', alignItems: 'center', gap: scale(2) }}>
@@ -82,9 +81,9 @@ const HomeModal = ({ isVisible, setIsVisible }) => {
                         <View>
 
                             <View style={{ flexDirection: 'row', gap: scale(2), alignItems: 'center' }}>
-                                <Text style={{ fontWeight: '400', fontSize: scale(10) }}>Car & Bike</Text>
+                                <Text style={{ fontWeight: '400', fontSize: scale(10) }}>{item.vehicleType}</Text>
                                 <Text style={{ fontWeight: '700', fontSize: scale(14) }}>•</Text>
-                                <Text style={{ fontWeight: '400', fontSize: scale(10) }}>6 Plugs</Text>
+                                <Text style={{ fontWeight: '400', fontSize: scale(10) }}>{item.numPlugs} Plugs</Text>
                             </View>
 
                         </View>
