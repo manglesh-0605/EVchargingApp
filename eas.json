@@ -1,13 +1,13 @@
 {
     "build": {
-      "preview": {
+      "apk": {
         "android": {
           "buildType": "apk"
         }
       },
-      "preview2": {
+      "abb": {
         "android": {
-          "gradleCommand": ":app:assembleRelease"
+          "gradleCommand": ":app:bundleRelease"
         }
       },
       "preview3": {
