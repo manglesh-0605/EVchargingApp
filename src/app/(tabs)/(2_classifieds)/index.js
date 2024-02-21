@@ -102,7 +102,7 @@ export default Page;
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        // backgroundColor: 'red',
+        backgroundColor: '#fff',
         paddingHorizontal: ThemeConstant.PADDING_MAIN,
         gap: scale(20),
         paddingBottom: moderateVerticalScale(40),

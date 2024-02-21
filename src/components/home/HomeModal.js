@@ -152,7 +152,7 @@ const styles = StyleSheet.create({
     },
     drawerContent: {
         width: '85%',
-        backgroundColor: 'white',
+        backgroundColor: '#fff',
         gap: scale(15),
         shadowColor: "#000",
         shadowOffset: {

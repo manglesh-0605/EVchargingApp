@@ -124,6 +124,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         gap: scale(20),
-        position: 'relative'
+        position: 'relative',
+        backgroundColor: '#fff'
     },
 })
