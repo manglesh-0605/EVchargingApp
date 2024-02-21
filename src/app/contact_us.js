@@ -161,5 +161,6 @@ const styles = StyleSheet.create({
     container: {
         paddingHorizontal: ThemeConstant.PADDING_MAIN,
         paddingTop: moderateVerticalScale(30),
+        backgroundColor: '#fff'
     }
 })

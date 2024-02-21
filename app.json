@@ -16,17 +16,23 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.development.EVchargingapp"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
+      "config":{
+        "googleMaps":{
+          "apiKey":"AIzaSyCKFKjyPUloNMA_aF0UN6n5kdUIUAjNK-0"
+        }
+      },
       "permissions": [
         "android.permission.RECORD_AUDIO"
       ],
-      "package": "com.manglesh_0605.EVchargingapp"
+      "package": "com.development.EVchargingapp"
     },
     "web": {
       "favicon": "./assets/favicon.png"

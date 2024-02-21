@@ -31,7 +31,17 @@ const styles = StyleSheet.create({
         padding: scale(4),
         position: 'relative',
         borderRadius: scale(10),
-        gap: moderateScale(10)
+        gap: moderateScale(10),
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 1,
+        },
+        shadowOpacity: 0.18,
+        shadowRadius: 1.00,
+
+        elevation: 1,
+        marginBottom: moderateVerticalScale(2)
     },
     img: {
         height: moderateScale(80),

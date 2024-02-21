@@ -38,7 +38,16 @@ const styles = StyleSheet.create({
         position: 'relative',
         flexDirection: 'row',
         borderRadius: scale(10),
-        gap: moderateScale(8)
+        gap: moderateScale(8),
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 1,
+        },
+        shadowOpacity: 0.18,
+        shadowRadius: 1.00,
+
+        elevation: 1,
     },
     img: {
         width: moderateScale(120),
